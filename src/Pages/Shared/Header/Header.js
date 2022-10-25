@@ -29,22 +29,22 @@ const Header = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link>Item 1</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <Link>Item 3</Link>
+                <Link to='/courses'>Courses</Link>
               </li>
               <li>
-                <Link>Item 1</Link>
+                <Link to='/faq'>FAQ</Link>
               </li>
               <li>
-                <Link>Item 3</Link>
+                <Link to='/blog'>Blog</Link>
               </li>
               <li>
-                <Link>Item 1</Link>
+                <Link to='/login'>Log in</Link>
               </li>
               <li>
-                <Link>Item 3</Link>
+                <Link to='/register'>Sign Up</Link>
               </li>
             </ul>
           </div>
