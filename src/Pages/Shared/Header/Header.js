@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100 px-10">
+      <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -56,7 +57,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-3xl">Edu Cell</Link>
+          <Link className="btn btn-ghost normal-case text-3xl">Edu Tech</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
@@ -72,12 +73,18 @@ const Header = () => {
             <li>
               <Link to="/blog">Blog</Link>
             </li>
+            
           </ul>
         </div>
         <div className="navbar-end">
           {user?.uid ? (
-            <>
-                <img  src={ user?.photoURL } alt="" style={{ height: '40px',  }} className="rounded-full" />
+            <>{user?.photoURL ?
+                <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                  <img  src={ user?.photoURL } alt="" style={{ height: '40px' }} className="rounded-full" />
+                </div>
+                : <FaUser></FaUser>
+            }
+                
                 <button className="btn btn-ghost ml-3" onClick={handleLogOut}>
                   Log out
                 </button>
