@@ -4,6 +4,7 @@ import Blog from "../../Pages/Blog/Blog";
 import Courses from "../../Pages/Courses/Courses";
 import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
+import InvalidPage from "../../Pages/InvalidPage/InvalidPage";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 
@@ -37,5 +38,9 @@ export const routes = createBrowserRouter([
                 element: <Register></Register>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <InvalidPage></InvalidPage>
     }
 ])

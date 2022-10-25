@@ -68,7 +68,7 @@ const Header = () => {
                 <Link to='/login'>Log in</Link>
               </li>
               <li>
-                <Link to='/register'>Sign Up</Link>
+                <Link to='/register'>Register</Link>
               </li>
           </ul>
         </div>
