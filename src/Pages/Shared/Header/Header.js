@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div>
-
       <div className="navbar bg-base-100 px-10">
         <div className="navbar-start">
           <div className="dropdown">
@@ -29,74 +37,61 @@ const Header = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to='/'>Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to='/courses'>Courses</Link>
+                <Link to="/courses">Courses</Link>
               </li>
               <li>
-                <Link to='/faq'>FAQ</Link>
+                <Link to="/faq">FAQ</Link>
               </li>
               <li>
-                <Link to='/blog'>Blog</Link>
+                <Link to="/blog">Blog</Link>
               </li>
               <li>
-                <Link to='/login'>Log in</Link>
+                <Link to="/login">Log in</Link>
               </li>
               <li>
-                <Link to='/register'>Sign Up</Link>
+                <Link to="/register">Sign Up</Link>
               </li>
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+          <Link className="btn btn-ghost normal-case text-3xl">Edu Cell</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
-              <li>
-                <Link to='/'>Home</Link>
-              </li>
-              <li>
-                <Link to='/courses'>Courses</Link>
-              </li>
-              <li>
-                <Link to='/faq'>FAQ</Link>
-              </li>
-              <li>
-                <Link to='/blog'>Blog</Link>
-              </li>
-              <li>
-                <Link to='/login'>Log in</Link>
-              </li>
-              <li>
-                <Link to='/register'>Register</Link>
-              </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/courses">Courses</Link>
+            </li>
+            <li>
+              <Link to="/faq">FAQ</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="https://placeimg.com/80/80/people" />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-            >
+          {user?.uid ? (
+            <>
+                <img  src={ user?.photoURL } alt="" style={{ height: '40px',  }} className="rounded-full" />
+                <button className="btn btn-ghost ml-3" onClick={handleLogOut}>
+                  Log out
+                </button>
+            </>
+          ) : (
+            <div className="menu menu-horizontal p-0 hidden lg:flex">
               <li>
-                <Link className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </Link>
+                <Link to="/login">Log in</Link>
               </li>
               <li>
-                <Link>Settings</Link>
+                <Link to="/register">Register</Link>
               </li>
-              <li>
-                <Link>Logout</Link>
-              </li>
-            </ul>
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
