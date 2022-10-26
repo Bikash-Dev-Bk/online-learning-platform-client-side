@@ -1,0 +1,36 @@
+.course img{
+    width: 460px;
+    height: 240px;
+    border-radius: 10px;
+}
+.course{
+    background-color:aliceblue;
+    height: 400px;
+    width: 480px;
+    padding: 10px;
+    border: 1px solid rgb(174, 171, 171);
+    border-radius: 10px;
+}
+
+.course-info{
+    text-align: justify;
+    padding: 10px;
+}
+
+
+/* ---------------------------------
+            Media Queries
+------------------------------------*/
+
+/*------Mobile devices--------*/
+
+@media only screen and (max-width: 688px) {
+    .course img{
+        width: 330px;
+        height: 140px;
+    }
+    .course{
+        width: 350px;
+        height: 320px;
+    }
+}

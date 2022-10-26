@@ -3,7 +3,7 @@ import React from 'react';
 const FAQ = () => {
     return (
         <div>
-            <h3>This is FAQ</h3>
+            <h3 className='text-center'>This is FAQ</h3>
         </div>
     );
 };
