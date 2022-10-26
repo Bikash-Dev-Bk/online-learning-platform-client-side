@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
-import { FaUser } from 'react-icons/fa';
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -49,12 +49,38 @@ const Header = () => {
               <li>
                 <Link to="/blog">Blog</Link>
               </li>
-              <li>
-                <Link to="/login">Log in</Link>
-              </li>
-              <li>
-                <Link to="/register">Sign Up</Link>
-              </li>
+
+              {user?.uid ? (
+                <>
+                  {user?.photoURL ? (
+                    <div
+                      className="tooltip tooltip-bottom ml-3 mt-3"
+                      data-tip={user?.displayName}
+                    >
+                      <img
+                        src={user?.photoURL}
+                        alt=""
+                        style={{ height: "40px" }}
+                        className="rounded-full"
+                      />
+                    </div>
+                  ) : (
+                    <FaUser></FaUser>
+                  )}
+                  <li className="m-3" onClick={handleLogOut}>
+                    Log out
+                  </li>
+                </>
+              ) : (
+                <div>
+                  <li>
+                    <Link to="/login">Log in</Link>
+                  </li>
+                  <li>
+                    <Link to="/register">Register</Link>
+                  </li>
+                </div>
+              )}
             </ul>
           </div>
           <Link className="btn btn-ghost normal-case text-3xl">Edu Tech</Link>
@@ -73,21 +99,33 @@ const Header = () => {
             <li>
               <Link to="/blog">Blog</Link>
             </li>
-            
+            <li>
+              <button>Dark</button>
+            </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end hidden lg:flex">
           {user?.uid ? (
-            <>{user?.photoURL ?
-                <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-                  <img  src={ user?.photoURL } alt="" style={{ height: '40px' }} className="rounded-full" />
+            <>
+              {user?.photoURL ? (
+                <div
+                  className="tooltip tooltip-bottom"
+                  data-tip={user?.displayName}
+                >
+                  <img
+                    src={user?.photoURL}
+                    alt=""
+                    style={{ height: "40px" }}
+                    className="rounded-full"
+                  />
                 </div>
-                : <FaUser></FaUser>
-            }
-                
-                <button className="btn btn-ghost ml-3" onClick={handleLogOut}>
-                  Log out
-                </button>
+              ) : (
+                <FaUser></FaUser>
+              )}
+
+              <button className="btn btn-ghost ml-3" onClick={handleLogOut}>
+                Log out
+              </button>
             </>
           ) : (
             <div className="menu menu-horizontal p-0 hidden lg:flex">

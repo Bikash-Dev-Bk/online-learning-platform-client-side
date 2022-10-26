@@ -1,0 +1,44 @@
+.question-answer-container{
+    margin-right: 130px;
+    margin-left: 130px;
+}
+
+.question-container{
+    margin-top: 60px;
+}
+
+.question-answer{
+    margin: 130px;
+    background-color:  #fbeeff;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+}
+.question-answer:hover{
+    background-color:  #e9c2f5;
+    box-shadow: 15px 15px 15px gray;
+}
+
+
+/* ---------------------------------
+            Media Queries
+------------------------------------*/
+
+/*------Mobile devices--------*/
+
+@media only screen and (max-width: 688px) {
+    .question-answer-container{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+/*------Tablet devics--------*/
+
+@media only screen and (min-width: 689px) and (max-width: 991px) {
+    .question-answer-container{
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+}
