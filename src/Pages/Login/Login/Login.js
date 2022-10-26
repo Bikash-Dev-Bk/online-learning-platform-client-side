@@ -1,27 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
-    const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext)
+    const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+
+    const [success, setSuccess] = useState(false);
+    const [passwordError, setPasswordError] = useState("");
 
     const handleSubmit = event => {
         event.preventDefault();
+        setSuccess(false);
 
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
 
         console.log(email, password);
+        setPasswordError("");
 
         signIn(email, password)
         .then( result => {
             const user = result.user;
+            setSuccess(true);
             form.reset();
             console.log(user)
         })
-        .catch( error => console.error(error))
+        .catch( error => {
+            console.error(error)
+            setPasswordError(error.message);
+        })
     }
 
     const handleSignInWithGoogle = () =>{
@@ -66,6 +75,11 @@ const Login = () => {
                                     <Link to='/register' className="label-text-alt link link-hover">New in this website? Register</Link>
                                 </label>
                             </div>
+
+                            {success && <p className='text-green-500'>Successfully login to the account</p>}
+
+                            {passwordError && <p className='text-red-500'>Wrong password or email</p>}
+
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Log in</button>
                             </div>
