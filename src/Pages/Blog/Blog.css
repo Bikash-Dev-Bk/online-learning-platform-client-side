@@ -9,15 +9,11 @@
 
 .question-answer{
     margin: 130px;
+    color: black;
     background-color:  #fbeeff;
     padding: 30px;
     margin: 30px;
     border-radius: 15px;
-    box-shadow: 5px 5px 5px gray;
-}
-.question-answer:hover{
-    background-color:  #e9c2f5;
-    box-shadow: 15px 15px 15px gray;
 }
 
 
