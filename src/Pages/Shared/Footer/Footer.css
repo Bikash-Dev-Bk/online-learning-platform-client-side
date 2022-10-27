@@ -3,6 +3,8 @@
   color: white;
   height: 300px;
   text-align: center;
+  position: static;
+  bottom: 0;
 }
 .footer-content {
   padding-top: 50px;
