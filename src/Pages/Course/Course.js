@@ -15,7 +15,7 @@ const Course = (props) => {
           <p>Ratting: {ratting} stars</p>
         </div>
         <Link to={`/courses/${props.course.id}`}>
-          <button className="btn rounded-full  normal-case text-2xl mt-2 text-center">
+          <button className="btn normal-case text-2xl mt-2 text-center">
             Course Details
           </button>
         </Link>

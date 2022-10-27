@@ -1,0 +1,30 @@
+
+
+
+.course-details-container{
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+
+.course-details-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+
+
+/* ---------------------------------
+            Media Queries
+------------------------------------*/
+
+/*------Mobile devices--------*/
+
+@media only screen and (max-width: 688px) {
+    .course-details-container{
+        width: 80%;
+    }
+}
