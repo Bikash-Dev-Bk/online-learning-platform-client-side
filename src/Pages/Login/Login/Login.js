@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
     const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [success, setSuccess] = useState(false);
     const [passwordError, setPasswordError] = useState("");
@@ -25,6 +26,7 @@ const Login = () => {
             const user = result.user;
             setSuccess(true);
             form.reset();
+            navigate('/');
             console.log(user)
         })
         .catch( error => {
@@ -37,6 +39,7 @@ const Login = () => {
         signInWithGoogle()
         .then( result => {
             const user = result.user;
+            navigate('/');
             console.log(user);
         })
         .catch(error => console.error(error))
@@ -46,6 +49,7 @@ const Login = () => {
         signInWithGithub()
         .then( result => {
             const user = result.user;
+            navigate('/');
             console.log(user);
         })
         .catch(error => console.error(error))

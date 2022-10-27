@@ -45,6 +45,9 @@ const Header = () => {
                 <Link to="/courses">Courses</Link>
               </li>
               <li>
+                <Link to="/checkout">CheckOut</Link>
+              </li>
+              <li>
                 <Link to="/faq">FAQ</Link>
               </li>
               <li>
@@ -96,6 +99,9 @@ const Header = () => {
             </li>
             <li>
               <Link to="/courses">Courses</Link>
+            </li>
+            <li>
+              <Link to="/checkout">CheckOut</Link>
             </li>
             <li>
               <Link to="/faq">FAQ</Link>
