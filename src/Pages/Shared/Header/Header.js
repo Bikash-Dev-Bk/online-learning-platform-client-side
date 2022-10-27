@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { FaUser } from "react-icons/fa";
-// import {logo} from '/public/logo.png';
+import "./Header.css";
+// import {logo} from '../../../assets/images/logo.png';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -88,6 +89,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="flex items-center header-title">
+            {/* <img src={logo} alt="logo" /> */}
             <Link className="btn btn-ghost normal-case text-3xl">Edu Tech</Link>
           </div>
         </div>
@@ -109,7 +111,20 @@ const Header = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <button><input type="checkbox" className="toggle" checked /></button>
+              {/* testing */}
+              
+
+              <div class="flex items-center justify-center w-full">
+                <label for="toggleB" class="flex items-center cursor-pointer">
+                  <div class="relative">
+                    <input type="checkbox" id="toggleB" class="sr-only" />
+                    <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                    <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                    <span class="absolute font-medium text-xs uppercase right-1 text-white"> OFF </span>
+  <span class="absolute font-medium text-xs uppercase right-8 text-white"> ON </span>
+                  </div>
+                </label>
+              </div>
             </li>
           </ul>
         </div>
