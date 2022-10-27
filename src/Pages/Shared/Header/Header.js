@@ -7,6 +7,8 @@ import { FaUser } from "react-icons/fa";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
+  console.log('inside header',user);
+
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -110,7 +112,7 @@ const Header = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <button>Dark</button>
+              <button><input type="checkbox" className="toggle" checked /></button>
             </li>
           </ul>
         </div>
