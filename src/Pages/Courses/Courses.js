@@ -15,10 +15,13 @@ const Courses = () => {
                     courses.map(course => <p key={course.id}><Link to={`/courses/${course.id}`}>{course.name}</Link></p>)
                 }
             </div>
-            <div className='courses'>
-                {
-                    courses.map(course => <Course key={course.id} course = {course}></Course>)
-                }
+            <div>
+                <h2 className='text-center text-3xl pt-10 pb-4'>Popular Courses To Learn</h2>
+                <div className='courses'>
+                    {
+                        courses.map(course => <Course key={course.id} course = {course}></Course>)
+                    }
+                </div>
             </div>
             
         </div>
