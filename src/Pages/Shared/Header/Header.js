@@ -87,8 +87,7 @@ const Header = () => {
               )}
             </ul>
           </div>
-          <div className="flex header-title">
-            {/* <img src={logo} alt="" /> */}
+          <div className="flex items-center header-title">
             <Link className="btn btn-ghost normal-case text-3xl">Edu Tech</Link>
           </div>
         </div>

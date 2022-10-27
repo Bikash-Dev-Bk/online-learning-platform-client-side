@@ -10,7 +10,7 @@ const Home = () => {
           Learn computer Science major courses from here!!
         </h2>
         <Link to="/courses">
-          <button className="btn btn-active btn-primary ">Get Start</button>
+          <button className="btn btn-active btn-primary ">Get Started</button>
         </Link>
       </div>
     </div>
