@@ -20,13 +20,16 @@ const AuthProvider = ({children}) => {
     }
 
     const signIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const signInWithGoogle = () =>{
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
     const signInWithGithub = () =>{
+        setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
 
