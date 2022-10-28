@@ -9,10 +9,10 @@ const Courses = () => {
 
     return (
         <div className='course-container'>
-            <div className=' p-10 '>
+            <div className=' p-10 mt-6'>
                 <h3 className='mb-6 text-2xl'>All Courses </h3>
                 {
-                    courses.map(course => <p key={course.id}><Link to={`/courses/${course.id}`}>{course.name}</Link></p>)
+                    courses.map(course => <p className='courses-nav text-2xl' key={course.id}><Link to={`/courses/${course.id}`}>{course.name}</Link></p>)
                 }
             </div>
             <div>

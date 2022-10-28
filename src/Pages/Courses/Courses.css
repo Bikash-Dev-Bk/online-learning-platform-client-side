@@ -10,6 +10,13 @@
     margin: 40px;
 }
 
+.courses-nav{
+    background-color: aliceblue;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
 
 
 
@@ -31,5 +38,11 @@
         flex-direction: column;
         align-items: center;
         margin: 0;
+    }
+
+    .courses-nav{
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 15px;
     }
 }
