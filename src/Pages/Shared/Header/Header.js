@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { FaUser } from "react-icons/fa";
+import logo from '../../../assets/images/logo.png';
+import './Header.css';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -87,8 +89,8 @@ const Header = () => {
               )}
             </ul>
           </div>
-          <div className="flex items-center header-title">
-            {/* <img src={logo} alt="logo" /> */}
+          <div className="flex items-center header-title header-logo">
+            <img src={logo} alt="" />
             <Link className="btn btn-ghost normal-case text-3xl">Edu Tech</Link>
           </div>
         </div>
