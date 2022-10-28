@@ -1,0 +1,28 @@
+
+
+.checkOut-details-container{
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+
+.checkOut-details-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+
+/* ---------------------------------
+            Media Queries
+------------------------------------*/
+
+/*------Mobile devices--------*/
+
+@media only screen and (max-width: 688px) {
+    .checkOut-details-container{
+        width: 80%;
+    }
+}

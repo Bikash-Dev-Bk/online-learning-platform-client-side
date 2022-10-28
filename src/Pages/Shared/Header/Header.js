@@ -45,9 +45,9 @@ const Header = () => {
               <li>
                 <Link to="/courses">Courses</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/checkout">CheckOut</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/faq">FAQ</Link>
               </li>
@@ -101,9 +101,9 @@ const Header = () => {
             <li>
               <Link to="/courses">Courses</Link>
             </li>
-            <li>
-              <Link to="/checkout">CheckOut</Link>
-            </li>
+            {/* <li>
+              <Link to="/courses/:id/checkout">CheckOut</Link>
+            </li> */}
             <li>
               <Link to="/faq">FAQ</Link>
             </li>
@@ -111,8 +111,6 @@ const Header = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              {/* testing */}
-              
 
               <div class="flex items-center justify-center w-full">
                 <label for="toggleB" class="flex items-center cursor-pointer">
@@ -120,11 +118,12 @@ const Header = () => {
                     <input type="checkbox" id="toggleB" class="sr-only" />
                     <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
                     <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
-                    <span class="absolute font-medium text-xs uppercase right-1 text-white"> OFF </span>
-  <span class="absolute font-medium text-xs uppercase right-8 text-white"> ON </span>
+                    <span class="absolute font-medium text-2xs uppercase right-1 text-white">Dark</span>
+                    <span class="absolute font-medium text-2xs uppercase right-8 text-white">Light </span>
                   </div>
                 </label>
               </div>
+
             </li>
           </ul>
         </div>

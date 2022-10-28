@@ -38,8 +38,12 @@ export const routes = createBrowserRouter([
           ),
       },
       {
-        path: "/checkout",
-        element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
+        path: "/courses/:id/checkout",
+        element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+        loader: ({ params }) =>
+          fetch(
+            `https://learning-platform-server-side-iota.vercel.app/courses/${params.id}/checkout`
+          )
       },
       {
         path: "/faq",

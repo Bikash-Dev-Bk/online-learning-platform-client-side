@@ -3,8 +3,9 @@ import { Link, useLoaderData } from "react-router-dom";
 import "./CourseDetails.css";
 
 const CourseDetails = () => {
+
   const course = useLoaderData();
-  console.log(course);
+
   return (
     <div className="">
       <div className="navbar bg-gray-700  px-4">
@@ -22,9 +23,11 @@ const CourseDetails = () => {
         </h3>
         <img className="my-6" src={course.img} alt="" />
         <p className="text-justify my-6">{course.info}</p>
+        <Link to={`/courses/${course.id}/checkout`}>
         <button className="btn btn-active btn-primary ">
           Get premium access
         </button>
+        </Link>
       </div>
     </div>
   );
