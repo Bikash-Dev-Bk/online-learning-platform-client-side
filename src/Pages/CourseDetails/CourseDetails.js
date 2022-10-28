@@ -8,19 +8,11 @@ const CourseDetails = () => {
 
   return (
     <div className="">
-      <div className="navbar bg-gray-700  px-4">
-        <div className="navbar-start">
-        <h3 className="text-2xl">{course.name}</h3>
-        </div>
-        <div className="navbar-end">
+      <div className="course-details-container ">
+        <div className="flex items-center justify-center">
+          <h3 className=" text-3xl my-6 mr-5">{course.name}</h3>
           <Link className="btn">Download</Link>
         </div>
-      </div>
-      
-      <div className="course-details-container ">
-        <h3 className="text-center text-3xl my-6">
-          Course details for {course.name}
-        </h3>
         <img className="my-6" src={course.img} alt="" />
         <p className="text-justify my-6">{course.info}</p>
         <Link to={`/courses/${course.id}/checkout`}>

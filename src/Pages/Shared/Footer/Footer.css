@@ -29,7 +29,7 @@ hr {
 
 @media only screen and (max-width: 688px) {
   .footer-container {
-    height: 580px;
+    height: 380px;
     margin-top: 20px;
   }
   .footer-content {
