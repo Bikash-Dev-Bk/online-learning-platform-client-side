@@ -1,4 +1,4 @@
-#Website Name: Edu Tech
+# Website Name: Edu Tech
 
 ## Wesite live link: https://edu-tech-2022.netlify.app/
 
